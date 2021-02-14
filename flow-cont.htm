@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1, 2, 3, 4, 5];
+      console.table(arr);
+      var len = arr.length;
+      console.log("🚀 ~ file: flow-cont.htm ~ line 12 ~ len", len);
+      for (var i = 0; i < len; i++) {
+        document.write(`<br> num : ${arr[i]}`);
+      }
+
+      for (let val of arr) {
+        document.write(`<br> num : ${val}`);
+      }
+    </script>
+  </body>
+</html>
