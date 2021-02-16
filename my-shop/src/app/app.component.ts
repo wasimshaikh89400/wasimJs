@@ -1,10 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-start',
+  template: '<h1>Hello JS..!</h1>',
 })
-export class AppComponent {
-  title = 'my-shop';
-}
+export class FirstComponent {}

@@ -1,16 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { FirstComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [FirstComponent], // col of comp(S)
+  imports: [BrowserModule], // to disp comp view in brow
+  bootstrap: [FirstComponent], // root component
 })
-export class AppModule { }
+export class FirstModule {}
