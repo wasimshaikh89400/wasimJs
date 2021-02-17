@@ -9,3 +9,5 @@ import { FirstComponent } from './app.component';
   bootstrap: [FirstComponent], // root component
 })
 export class FirstModule {}
+
+// module = set of logic(s)
