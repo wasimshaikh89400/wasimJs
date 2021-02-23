@@ -4,7 +4,12 @@
   <li *ngFor="let mobPart of mobParts">
     <p>Prod. Id: {{ mobPart.id }}</p>
     <p>Prod. Name: {{ mobPart.name }}</p>
-    <p *ngIf="mobPart.inStock > 0">Prod. in stock: {{ mobPart.inStock }}</p>
-    <p *ngIf="mobPart.inStock === 0">Out Of Stock</p>
+    <p *ngIf="mobPart.inStock > 0; else abc">
+      Prod. in stock: {{ mobPart.inStock }}
+    </p>
+
+    <ng-template #abc>
+      <p>Out Of Stock</p>
+    </ng-template>
   </li>
 </ul>
