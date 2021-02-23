@@ -1,7 +1,10 @@
-<!-- <label for=""></label> -->
+<!-- <label ngfor=""></label> -->
+
 <ul>
   <li *ngFor="let mobPart of mobParts">
-    <p>{{ mobPart.id }}</p>
-    <p>{{ mobPart.name }}</p>
+    <p>Prod. Id: {{ mobPart.id }}</p>
+    <p>Prod. Name: {{ mobPart.name }}</p>
+    <p *ngIf="mobPart.inStock > 0">Prod. in stock: {{ mobPart.inStock }}</p>
+    <p *ngIf="mobPart.inStock === 0">Out Of Stock</p>
   </li>
 </ul>

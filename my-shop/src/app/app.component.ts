@@ -16,14 +16,17 @@ export class FirstComponent {
     {
       id: 1001,
       name: 'Charger',
+      inStock: 0,
     },
     {
       id: 1002,
       name: 'Mobile Screen',
+      inStock: 20,
     },
     {
       id: 1003,
       name: 'Headphone',
+      inStock: 10,
     },
   ];
 }
