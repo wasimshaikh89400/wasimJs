@@ -11,7 +11,16 @@ import { BannerThreeComponent } from './layouts/banner-three/banner-three.compon
 import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
-  declarations: [FirstComponent, NavComponent, BannerOneComponent, ProductsComponent, BannerTwoComponent, ContactUsComponent, BannerThreeComponent, FooterComponent], // col of comp(S)
+  declarations: [
+    FirstComponent,
+    NavComponent,
+    BannerOneComponent,
+    ProductsComponent,
+    BannerTwoComponent,
+    ContactUsComponent,
+    BannerThreeComponent,
+    FooterComponent,
+  ], // col of comp(S)
   imports: [BrowserModule], // to disp comp view in brow
   bootstrap: [FirstComponent], // root component
 })

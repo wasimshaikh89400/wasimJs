@@ -8,11 +8,24 @@
 
       <ul>
         <li *ngFor="let mobPart of mobParts">
-          <p>Prod. Id: {{ mobPart.id }}</p>
-          <p>Prod. Name: {{ mobPart.name }}</p>
-          <p *ngIf="mobPart.inStock > 0; else abc">
-            Prod. in stock: {{ mobPart.inStock }}
-          </p>
+          <div class="col s12 m4">
+            <div class="card">
+              <div class="card-image">
+                <img src="./../../../assets/img/sample-1.jpg" />
+                <span class="card-title">{{ mobPart.name }}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"
+                  ><i class="material-icons">add</i></a
+                >
+              </div>
+              <div class="card-content">
+                <p>Prod. Id: {{ mobPart.id }}</p>
+                <p>Prod. Name: {{ mobPart.name }}</p>
+                <p *ngIf="mobPart.inStock > 0; else abc">
+                  Prod. in stock: {{ mobPart.inStock }}
+                </p>
+              </div>
+            </div>
+          </div>
 
           <ng-template #abc>
             <p>Out Of Stock</p>
