@@ -8,8 +8,9 @@ export class ProductsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  name: string = 'Alex';
 
-  mobParts = [
+  mobParts: MobParts[] = [
     {
       id: 1001,
       name: 'CHARGER',
@@ -19,14 +20,31 @@ export class ProductsComponent implements OnInit {
     {
       id: 1002,
       name: 'mobile screen',
-      inStock: 0,
+      inStock: 20,
       price: 1200,
     },
     {
       id: 1003,
       name: 'Headphone',
-      inStock: 0,
+      inStock: 33,
       price: 1200,
     },
   ];
+
+  calcProds() {
+    let sum: number = 0;
+
+    for (let mobPart of this.mobParts) {
+      sum = sum + mobPart.inStock;
+    }
+
+    return sum;
+  }
+}
+
+interface MobParts {
+  id: number;
+  name: string;
+  inStock: number;
+  price: number;
 }

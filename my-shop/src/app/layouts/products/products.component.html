@@ -1,11 +1,7 @@
 <div class="container">
   <div class="section">
-    <!--   Icon Section   -->
     <div class="row">
-      <!-- Start : row -->
-
-      <!-- Empty the 'row' div -->
-
+      <h1>We have {{ calcProds() }} products..!</h1>
       <ul>
         <li *ngFor="let mobPart of mobParts">
           <div class="col s12 m4">
@@ -24,7 +20,12 @@
                   Prod. in stock: {{ mobPart.inStock }}
                 </p>
                 <p>
-                  Product price : <s>{{ mobPart.price | currency: "INR" }}</s>
+                  Product price :
+                  <s style="color: #f00"
+                    ><span style="color: #000">
+                      {{ mobPart.price | currency: "INR" }}
+                    </span>
+                  </s>
                 </p>
                 <p>
                   50% Off price : {{ mobPart.price | offer | currency: "INR" }}
@@ -38,7 +39,6 @@
           </ng-template>
         </li>
       </ul>
-      <!-- End : row -->
     </div>
   </div>
 </div>
