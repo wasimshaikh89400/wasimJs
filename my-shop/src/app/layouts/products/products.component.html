@@ -23,7 +23,12 @@
                 <p *ngIf="mobPart.inStock > 0; else abc">
                   Prod. in stock: {{ mobPart.inStock }}
                 </p>
-                <p>Product price : {{ mobPart.price | currency: "INR" }}</p>
+                <p>
+                  Product price : <s>{{ mobPart.price | currency: "INR" }}</s>
+                </p>
+                <p>
+                  50% Off price : {{ mobPart.price | offer | currency: "INR" }}
+                </p>
               </div>
             </div>
           </div>

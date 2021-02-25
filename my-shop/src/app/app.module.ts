@@ -9,6 +9,7 @@ import { BannerTwoComponent } from './layouts/banner-two/banner-two.component';
 import { ContactUsComponent } from './layouts/contact-us/contact-us.component';
 import { BannerThreeComponent } from './layouts/banner-three/banner-three.component';
 import { FooterComponent } from './layouts/footer/footer.component';
+import { OfferPipe } from './pipes/offer.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
     ContactUsComponent,
     BannerThreeComponent,
     FooterComponent,
+    OfferPipe,
   ], // col of comp(S)
   imports: [BrowserModule], // to disp comp view in brow
   bootstrap: [FirstComponent], // root component
