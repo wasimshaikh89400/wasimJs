@@ -12,18 +12,21 @@ export class ProductsComponent implements OnInit {
   mobParts = [
     {
       id: 1001,
-      name: 'Charger',
+      name: 'CHARGER',
       inStock: 10,
+      price: 1200,
     },
     {
       id: 1002,
-      name: 'Mobile Screen',
+      name: 'mobile screen',
       inStock: 0,
+      price: 1200,
     },
     {
       id: 1003,
       name: 'Headphone',
       inStock: 0,
+      price: 1200,
     },
   ];
 }
