@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MobParts } from './../../model/mob-parts.model';
+import { MOBPARTS } from './../../data/mock';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -10,26 +13,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {}
   name: string = 'Alex';
 
-  mobParts: MobParts[] = [
-    {
-      id: 1001,
-      name: 'CHARGER',
-      inStock: 10,
-      price: 1200,
-    },
-    {
-      id: 1002,
-      name: 'mobile screen',
-      inStock: 20,
-      price: 1200,
-    },
-    {
-      id: 1003,
-      name: 'Headphone',
-      inStock: 33,
-      price: 1200,
-    },
-  ];
+  mobParts: MobParts[] = MOBPARTS;
 
   calcProds() {
     let sum: number = 0;
@@ -40,11 +24,4 @@ export class ProductsComponent implements OnInit {
 
     return sum;
   }
-}
-
-interface MobParts {
-  id: number;
-  name: string;
-  inStock: number;
-  price: number;
 }
