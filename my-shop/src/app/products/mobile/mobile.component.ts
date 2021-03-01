@@ -9,10 +9,22 @@ import { MobParts } from './../../model/mob-parts.model';
   styles: [],
 })
 export class MobileComponent implements OnInit {
-  ngOnInit(): void {}
-  name: string = 'Alex';
+  mobParts: MobParts[] = [];
+  name: string = '';
 
-  mobParts: MobParts[] = MOBPARTS;
+  ngOnInit(): void {
+    this.name = 'Alex';
+
+    this.mobParts = MOBPARTS; //100MB
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.name = '';
+
+    this.mobParts = []; //100MB
+  }
 
   calcProds() {
     let sum: number = 0;
