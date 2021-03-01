@@ -11,6 +11,9 @@ import { BannerThreeComponent } from './layouts/banner-three/banner-three.compon
 import { FooterComponent } from './layouts/footer/footer.component';
 import { OfferPipe } from './pipes/offer.pipe';
 import { TextcolorDirective } from './directives/textcolor.directive';
+import { MobileComponent } from './products/mobile/mobile.component';
+import { LaptopsComponent } from './products/laptops/laptops.component';
+import { PlantsComponent } from './products/plants/plants.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { TextcolorDirective } from './directives/textcolor.directive';
     FooterComponent,
     OfferPipe,
     TextcolorDirective,
+    MobileComponent,
+    LaptopsComponent,
+    PlantsComponent,
   ], // col of comp(S)
   imports: [BrowserModule], // to disp comp view in brow
   bootstrap: [FirstComponent], // root component
