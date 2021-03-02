@@ -8,7 +8,7 @@ import { MobParts } from './../../model/mob-parts.model';
   templateUrl: './mobile.component.html',
   styles: [],
 })
-export class MobileComponent implements OnInit {
+export class MobileComponent {
   mobParts: MobParts[] = [];
   name: string = '';
 
