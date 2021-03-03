@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { FirstComponent } from './app.component';
 import { NavComponent } from './layouts/nav/nav.component';
@@ -31,7 +32,7 @@ import { PlantsComponent } from './products/plants/plants.component';
     LaptopsComponent,
     PlantsComponent,
   ], // col of comp(S)
-  imports: [BrowserModule], // to disp comp view in brow
+  imports: [BrowserModule, FormsModule], // to disp comp view in brow
   bootstrap: [FirstComponent], // root component
 })
 export class FirstModule {}

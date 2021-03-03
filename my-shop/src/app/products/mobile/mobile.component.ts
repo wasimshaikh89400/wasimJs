@@ -35,4 +35,16 @@ export class MobileComponent {
 
     return sum;
   }
+
+  upQntt(mobPart: any) {
+    if (mobPart.qntt < mobPart.inStock) mobPart.qntt++;
+  }
+
+  downQntt(mobPart: any) {
+    if (mobPart.qntt !== 0) mobPart.qntt--;
+  }
+
+  catchQntt(event: any) {
+    console.log('  event : ', event.target.value);
+  }
 }

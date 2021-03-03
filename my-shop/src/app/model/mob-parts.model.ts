@@ -3,4 +3,6 @@ export interface MobParts {
   name: string;
   inStock: number;
   price: number;
+  prodImg: string;
+  qntt: number;
 }

@@ -5,7 +5,8 @@
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
-          <img src="./../../../assets/img/sample-1.jpg" />
+          <!-- <img src="./../../assets/img/{{ mobPart.prodImg }}" /> -->
+          <img [src]="mobPart.prodImg" />
           <span class="card-title">{{ mobPart.name | uppercase }}</span>
           <a class="btn-floating halfway-fab waves-effect waves-light red"
             ><i class="material-icons">add</i></a
@@ -26,6 +27,17 @@
             </s>
           </p>
           <p>50% Off price : {{ mobPart.price | offer | currency: "INR" }}</p>
+          <p align="center">
+            <button (click)="downQntt(mobPart)">-</button>
+            <input
+              type="text"
+              [value]="mobPart.qntt"
+              (input)="catchQntt($event)"
+              [(ngModel)]="mobPart.qntt"
+            />
+            {{ mobPart.qntt }}
+            <button (click)="upQntt(mobPart)">+</button>
+          </p>
         </div>
       </div>
     </div>
