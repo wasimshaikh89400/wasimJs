@@ -16,6 +16,18 @@ import { MobileComponent } from './products/mobile/mobile.component';
 import { LaptopsComponent } from './products/laptops/laptops.component';
 import { PlantsComponent } from './products/plants/plants.component';
 
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './layouts/home/home.component';
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'mobile', component: MobileComponent },
+  { path: 'laptop', component: LaptopsComponent },
+  { path: 'plants', component: PlantsComponent },
+  { path: '**', component: PageNotFoundComponent },
+];
+
 @NgModule({
   declarations: [
     FirstComponent,
@@ -31,8 +43,10 @@ import { PlantsComponent } from './products/plants/plants.component';
     MobileComponent,
     LaptopsComponent,
     PlantsComponent,
+    HomeComponent,
+    PageNotFoundComponent,
   ], // col of comp(S)
-  imports: [BrowserModule, FormsModule], // to disp comp view in brow
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)], // to disp comp view in brow
   bootstrap: [FirstComponent], // root component
 })
 export class FirstModule {}

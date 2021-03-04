@@ -28,15 +28,17 @@
           </p>
           <p>50% Off price : {{ mobPart.price | offer | currency: "INR" }}</p>
           <p align="center">
-            <button (click)="downQntt(mobPart)">-</button>
+            <a class="waves-effect waves-light btn" (click)="downQntt(mobPart)"
+              ><i class="material-icons">remove</i></a
+            >
             <input
+              style="width: 60px; text-align: center"
               type="text"
-              [value]="mobPart.qntt"
-              (input)="catchQntt($event)"
               [(ngModel)]="mobPart.qntt"
             />
-            {{ mobPart.qntt }}
-            <button (click)="upQntt(mobPart)">+</button>
+            <a class="waves-effect waves-light btn" (click)="upQntt(mobPart)"
+              ><i class="material-icons">add</i></a
+            >
           </p>
         </div>
       </div>
