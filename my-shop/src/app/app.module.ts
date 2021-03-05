@@ -1,54 +1,11 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
-import { FirstComponent } from './app.component';
-import { NavComponent } from './layouts/nav/nav.component';
-import { BannerOneComponent } from './layouts/banner-one/banner-one.component';
-import { ProductsComponent } from './layouts/products/products.component';
-import { BannerTwoComponent } from './layouts/banner-two/banner-two.component';
-import { ContactUsComponent } from './layouts/contact-us/contact-us.component';
-import { BannerThreeComponent } from './layouts/banner-three/banner-three.component';
-import { FooterComponent } from './layouts/footer/footer.component';
-import { OfferPipe } from './pipes/offer.pipe';
-import { TextcolorDirective } from './directives/textcolor.directive';
-import { MobileComponent } from './products/mobile/mobile.component';
-import { LaptopsComponent } from './products/laptops/laptops.component';
-import { PlantsComponent } from './products/plants/plants.component';
-
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './layouts/home/home.component';
-import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'mobile', component: MobileComponent },
-  { path: 'laptop', component: LaptopsComponent },
-  { path: 'plants', component: PlantsComponent },
-  { path: '**', component: PageNotFoundComponent },
-];
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    FirstComponent,
-    NavComponent,
-    BannerOneComponent,
-    ProductsComponent,
-    BannerTwoComponent,
-    ContactUsComponent,
-    BannerThreeComponent,
-    FooterComponent,
-    OfferPipe,
-    TextcolorDirective,
-    MobileComponent,
-    LaptopsComponent,
-    PlantsComponent,
-    HomeComponent,
-    PageNotFoundComponent,
-  ], // col of comp(S)
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)], // to disp comp view in brow
-  bootstrap: [FirstComponent], // root component
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  bootstrap: [AppComponent],
 })
-export class FirstModule {}
-
-// module = set of logic(s)
+export class AppModule {}
