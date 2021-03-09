@@ -4,4 +4,8 @@ import { Component, NgModule } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  logout() {
+    localStorage.removeItem('isAdmin');
+  }
+}

@@ -1,6 +1,7 @@
 import { SharedService } from './services/shared.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MobileComponent } from './products/mobile/mobile.component';
@@ -22,7 +23,7 @@ import { LoginComponent } from './auth/login/login.component';
     AdminComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   bootstrap: [AppComponent],
   providers: [SharedService],
 })

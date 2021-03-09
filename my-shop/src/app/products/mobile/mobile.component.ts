@@ -1,3 +1,4 @@
+import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from './../../services/shared.service';
 
@@ -8,9 +9,16 @@ import { SharedService } from './../../services/shared.service';
 })
 export class MobileComponent implements OnInit {
   tot = 0;
-  constructor(private sharedService: SharedService) {}
+  prods: any;
+  constructor(
+    private sharedService: SharedService,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit(): void {
+    this.prods = this.apiService.getProdsData().subscribe((data) => {
+      console.log(' data : ', data);
+    });
     this.tot = this.sharedService.calcProds(this.mobProds);
     console.log('tot', this.tot);
   }

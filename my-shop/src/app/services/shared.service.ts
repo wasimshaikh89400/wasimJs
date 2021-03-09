@@ -17,7 +17,8 @@ export class SharedService {
     console.log(uname, pass);
 
     if (uname === 'Admin' && pass === 'Admin') {
-      localStorage.setItem('admin', 'Admin');
+      // var isAdmin ="Admin"
+      localStorage.setItem('isAdmin', 'Admin');
       this.router.navigate(['/admin']);
     }
   }
