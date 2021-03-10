@@ -1,1 +1,8 @@
-<p>laptop works!</p>
+<form>
+  <div>
+    <input ngModel name="name" #tempVar="ngModel" required />
+  </div>
+  <div style="color: red" *ngIf="tempVar.touched && !tempVar.valid">
+    Something Went Wrong..!
+  </div>
+</form>

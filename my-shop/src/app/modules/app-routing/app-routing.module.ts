@@ -32,6 +32,12 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: 'pay',
+    loadChildren: () =>
+      import('src/app/modules/lazy/lazy.module').then((m) => m.LazyModule),
+  },
+
   { path: '**', component: LaptopComponent },
 ];
 
