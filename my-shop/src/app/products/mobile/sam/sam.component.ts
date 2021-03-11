@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-sam',
   templateUrl: './sam.component.html',
-  styleUrls: ['./sam.component.css']
 })
-export class SamComponent implements OnInit {
+export class SamComponent {
+  formObj = new FormGroup({
+    uNameObj: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    passObj: new FormControl('', Validators.required),
+  });
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get uName() {
+    return this.formObj.get('uNameObj');
   }
-
 }

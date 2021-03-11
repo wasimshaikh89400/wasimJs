@@ -1,8 +1,24 @@
-<form>
+<form #formTempvar="ngForm" (ngSubmit)="submitForm(formTempvar)">
   <div>
-    <input ngModel name="name" #tempVar="ngModel" required />
+    <input
+      ngModel
+      name="name"
+      #tempVar="ngModel"
+      required
+      minlength="4"
+      pattern="Angular"
+      (keyup)="log(tempVar)"
+    />
   </div>
   <div style="color: red" *ngIf="tempVar.touched && !tempVar.valid">
     Something Went Wrong..!
+    <div *ngIf="tempVar.errors?.required">required</div>
+    <div *ngIf="tempVar.errors?.minlength">
+      User name must be minimum
+      {{ tempVar.errors?.minlength.requiredLength }} length
+    </div>
+    <div *ngIf="tempVar.errors?.pattern">pattern</div>
   </div>
+
+  <input type="submit" [disabled]="!formTempvar.valid" />
 </form>

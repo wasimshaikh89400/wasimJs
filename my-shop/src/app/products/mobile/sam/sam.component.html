@@ -1,1 +1,12 @@
-<p>sam works!</p>
+<form [formGroup]="formObj">
+  <input formControlName="uNameObj" />
+  <div *ngIf="uName?.touched && uName?.invalid" style="color: red">
+    Error...!
+    <div *ngIf="uName?.errors?.required">Required...</div>
+    <div *ngIf="uName?.errors?.minlength">
+      Min {{ uName?.errors?.minlength?.requiredLength }} Length
+    </div>
+  </div>
+
+  <input type="password" formControlName="passObj" />
+</form>

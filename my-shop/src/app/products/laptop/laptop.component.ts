@@ -9,6 +9,10 @@ export class LaptopComponent {
   log(tempVar: any) {
     console.clear();
     console.log(tempVar);
-    console.log(tempVar.value);
+    // console.log(tempVar.value);
+  }
+
+  submitForm(formTempvar: any) {
+    console.log('formTempvar : ', formTempvar);
   }
 }
