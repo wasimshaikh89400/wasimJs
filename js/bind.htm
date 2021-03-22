@@ -1,0 +1,38 @@
+<script>
+  var dataObj = {
+    name: "Rama",
+    age: 25,
+  };
+
+  var fun = function (param1, param2) {
+    console.log(`param1 ${param1}`);
+    console.log(`param2 ${param2}`);
+    console.log(`${this.name} is ${this.age} years old.`);
+  }; //.bind(dataObj);
+
+  var abc = fun.bind(dataObj);
+  console.log(" abc", abc);
+
+  fun();
+  fun.call(dataObj, "p1", "p2");
+  fun.apply(dataObj, ["p1", "p2"]);
+
+  var funCurring = (a) => (b) => a + b;
+  console.log(funCurring(2)(3));
+</script>
+
+<!-- <script>
+  var person = {
+    name: "Alex",
+    age: 24,
+    info() {
+      return ` ${this.name} is ${this.age} years old..!`;
+    },
+  };
+
+  var fun = function () {
+    return this.info();
+  };
+
+  console.log(fun.bind(person)());
+</script> -->
