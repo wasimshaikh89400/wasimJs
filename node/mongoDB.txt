@@ -1,0 +1,70 @@
+{ Mongo: DB }
+
+MongoDB was created by Dwight Merriman and Eliot Horowitz, who had encountered development and scalability issues with traditional relational database approaches while building Web applications at DoubleClick, an Internet advertising company that is now owned by Google Inc. 
+
+According to Merriman, the name of the database was derived from the word humongous to represent the idea of supporting large amounts of data. Merriman and Horowitz helped form 10Gen Inc. in 2007 to commercialize MongoDB and related software. The company was renamed MongoDB Inc. in 2013. 
+
+The database was released to open source in 2009 and is available under the terms of the Free Software Foundation's GNU AGPL Version 3.0 commercial license. 
+
+
+What is Data?  :                         ‘Alex’
+In simple words, data can be facts related to any object in consideration.
+For example, your name, age, height, weight, etc are some data related to you.
+A picture , image , file , pdf etc can also be considered data.
+
+
+What is a Database?                 | Alex | Mumbai | 828988898 | 
+
+The database is a systematic collection of data. 
+Databases support storage and manipulation of data. 
+Databases make data management easy. Let's discuss a few examples.
+
+An online telephone directory would definitely use a database to store data pertaining to people, phone numbers and other contact details, etc.
+
+Your electricity service provider is obviously using a database to manage billing, client related issues, to handle fault data, etc.
+Let's also consider Facebook. It needs to store, manipulate and present data related to members, their friends, member activities, messages, advertisements and a lot more.
+
+
+What is a Database Management System (DBMS)?          |Ali |Khan | 
+Database Management System (DBMS) is a collection of programs which enables its users to access the database, manipulate data, reporting/representation of data.
+
+It also helps to control access to the database.
+
+Database Management Systems are not a new concept and as such had been first implemented in the 1960s.
+
+
+
+
+
+Relational DBMS 
+This type of DBMS defines database relationships in the form of tables, also known as relations. 
+Unlike network DBMS, RDBMS does not support many to many relationships.
+Relational DBMS usually have pre-defined data types that they can support. 
+This is the most popular DBMS type in the market. 
+Examples of relational database management systems include MySQL, Oracle, and Microsoft SQL Server database.
+
+
+
+
+
+
+
+
+pData - eduData - jobData - handData - j&kData - sportData
+
+What is SQL?
+Structured Query Language (SQL) pronounced as "S-Q-L" or sometimes as "Se-Quel" is actually the standard language for dealing with Relational Databases.
+
+SQL programming can be effectively used to insert, search, update, delete ( Create, Read, Update, Delete ) database records.
+
+That doesn't mean SQL cannot do things beyond that.
+
+In fact, it can do a lot of things including, but not limited to, optimizing and maintenance of databases. 
+
+Relational databases like MySQL Database, Oracle, MSSQL Server, Sybase, etc use SQL! How to use SQL syntaxes?
+
+ SQL syntaxes used in these databases are almost similar, except the fact that some are using a few different syntaxes and even proprietary SQL syntaxes.
+
+SQL Example
+
+ SELECT * FROM Members WHERE Age > 30 
