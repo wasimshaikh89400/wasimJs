@@ -68,3 +68,150 @@ Relational databases like MySQL Database, Oracle, MSSQL Server, Sybase, etc use 
 SQL Example
 
  SELECT * FROM Members WHERE Age > 30 
+
+
+
+
+What is NoSQL?
+NoSQL is an upcoming category of Database Management Systems. 
+Its main characteristic is its non-adherence to Relational Database Concepts. NoSQL means "Not Only SQL". 
+
+The concept of NoSQL databases grew with internet giants such as Google, Facebook, Amazon etc who deal with gigantic volumes of data.
+
+When you use a relational database for massive volumes of data, the system starts getting slow in terms of response time.
+
+To overcome this, we could of course "scale up" our systems by upgrading our existing hardware.
+
+The alternative to the above problem would be to distribute our database load on multiple hosts as the load increases.
+
+This is known as "scaling out".
+
+ NoSQL database is non-relational databases that scale out better than relational databases and are designed with web applications in mind.
+
+They do not use SQL to query the data and do not follow strict schemas like relational models. With NoSQL, ACID (Atomicity, Consistency, Isolation, Durability) features are not guaranteed.
+
+NoSQL database
+NoSQL databases are useful for large sets of distributed data.
+
+NoSQL databases are effective for big data performance issues that relational databases aren't built to solve. 
+They are most effective when an organization must analyze large chunks of unstructured data or data that are stored across multiple virtual servers in the cloud.
+
+
+Purpose to build MongoDB
+     "what was the need for MongoDB although there were many databases in action?"
+
+This is a very simple answer:
+
+“All modern applications require big data, fast features development, flexible deployment and the older database systems are not competent enough, so the MongoDB was obviously needed.”
+
+The main purpose to build MongoDB:
+
+Scalability
+Performance
+High Availability
+Scaling from single server deployments to large, complex multi-site architectures.
+
+Key points of MongoDB: 
+
+Develop Faster
+Deploy Easier
+Scale Bigger
+
+
+
+Database: in Mongo
+The database is a physical container for collections. Each DB gets its own set of files on the file system.
+A single MongoDB server typically has multiple databases.
+
+Collection :
+
+A collection is a group of an RDBMS table. A collection exists within a single database. Documents within a collection can have different fields. Typically, all documents in a collection are of similar or related purpose.
+
+
+
+
+Document :
+
+A document is a set of key-value pairs. Documents have a dynamic schema. Dynamic schema means that documents in the same set of fields or structure and common fields in a collection's documents may hold different types of data.
+
+
+
+Features of MongoDB
+These are some important features of MongoDB:
+
+1.  Support ad hoc queries
+
+In MongoDB, you can search by field, range query and it also supports regular expression searches.
+
+2. Indexing
+
+You can index any field in a document.
+
+3. Replication
+
+MongoDB supports Master-Slave replication.
+
+A master can perform Reads and Writes and a Slave copies data from the master and can only be used for reads or back up (not writes)
+
+4. Duplication of data
+
+MongoDB can run over multiple servers. The data is duplicated to keep the system up and also keep its running condition in case of hardware failure.
+
+5. Load balancing
+
+It has an automatic load balancing configuration because of data placed in shards.
+
+6. Supports map reduce and aggregation tools.
+
+7. Uses JavaScript instead of Procedures.
+
+8. It is a schema-less database written in C++.
+
+9. Provides high performance.
+
+10. Stores files of any size easily without complicating your stack.
+
+11. Easy to administer in the case of failures.
+
+12. It also supports:
+
+JSON data model with dynamic schemas
+Auto-sharding for horizontal scalability
+Built-in replication for high availability
+
+
+Example of a database:
+
+MongoDB stores data as documents, so it is known as the document-oriented database. It is a key feature of MongoDB. It offers document-oriented storage. It is very simple and you can program it easily.
+
+
+FirstName = "Ajeet",                                                                                                           
+Address = "Laxmi Nagar",                                                                                                   
+Spouse = [{Name: "Charu"}].                                                                                           
+FirstName ="Ravi",  
+Address = "Loni"  
+
+
+There are two different documents (separated by ".").
+
+Storing data in this manner is called the document-oriented database.
+
+
+The following table shows the relationship of RDBMS terminology with MongoDB.
+RDBMS
+MongoDB
+Database
+Database
+Table
+Collection
+Tuple/Row
+Document
+column
+Field
+Table Join
+Embedded Documents
+Primary Key
+Primary Key (Default key _id provided by MongoDB itself)
+
+
+Installation:
