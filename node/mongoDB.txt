@@ -215,3 +215,291 @@ Primary Key (Default key _id provided by MongoDB itself)
 
 
 Installation:
+
+Date: 4 Apr 2021
+
+Working with the mongo Shell
+To display the database you are using, type db:
+> db 
+test 
+The operation should return   > test , which is the default database.
+
+To switch databases, issue the use <db> helper, as in the following example:
+> use <database>
+
+You can switch to non-existing databases. When you first store data in the database, such as by creating a collection, MongoDB creates the database. For example, the following creates both the database myNewDatabase and the collection myCollection during the insertOne() operation:
+
+> use myNewDatabase
+> db.myCollection.insertOne( { x: 1 } );
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5f3e214c1fbd2a6371f2f990")
+}
+> db.myCollection.insert( { x: 1 } );
+WriteResult({ "nInserted" : 1 })
+>
+The db.myCollection.insertOne() is one of the methods available in the mongo shell.
+db refers to the current database.
+myCollection is the name of the collection.
+If the mongo shell does not accept the name of a collection, you can use the alternative db.getCollection() syntax. For instance, if a collection name contains a space or hyphen, starts with a number, or conflicts with a built-in function:
+select * from myCollection
+db.getCollection("myCollection").find()
+db.getCollection(var).find();
+
+db.myCollection.find();
+
+ 
+
+
+
+Syntax:
+
+Use dbName     //  db=dbName
+
+Syntax = >  db.collection.document    ex. db.createCollection(‘collectionName’);
+
+database.collection.documentMethods( )    ex.   db.collectionName.insert({‘name’: ‘Alex’})
+
+use DATABASE_NAME  
+If the database already exists, it will return the existing database.
+
+Let's take an example to demonstrate how a database is created in MongoDB. In the following example, we are going to create a database "demodb".
+
+See this example
+
+>use demodb  
+Switched to db demodb
+
+
+To check the currently selected database, use the command db:
+
+>db  
+demodb
+
+To check the database list, use the command show dbs:
+
+>show dbs  
+local 0.078GB
+
+
+Here, your created database "demodb" is not present in the list, insert at least one document into it to display database:
+
+>db.myCollection.insert({"name":"test"})  
+WriteResult({ "nInserted": 1})
+
+>show dbs  
+demodb 0.000GB
+local 0.078GB
+
+
+
+MongoDB Drop Database
+The dropDatabase command is used to drop a database. It also deletes the associated data files. It operates on the current database.
+
+Syntax:
+
+db.dropDatabase()  
+This syntax will delete the selected database. In case you have not selected any database, it will delete default "test" database.
+
+To check the database list, use the command show dbs:
+
+>show dbs  
+local 0.078GB
+If you want to delete the database "demodb", use the dropDatabase() command as follows:
+
+>use demodb  
+switched to the db demodb
+
+>db.dropDatabase()  
+{ "dropped": "demodb", "ok": 1}
+Now check the list of databases:
+
+>show dbs  
+local 0.078GB
+
+
+
+MongoDB Create Collection
+In MongoDB, db.createCollection(name, options) is used to create a collection. But usually you don?t need to create a collection. MongoDB creates a collection automatically when you insert some documents. It will be explained later. First see how to create collection:
+
+Syntax:
+
+db.createCollection(name, options) 
+
+  
+Here,
+
+Name: is a string type, specifies the name of the collection to be created.
+
+Options: is a document type, specifies the memory size and indexing of the collection. It is an optional parameter.
+
+
+
+Let's take an example to create a collection. In this example, we are going to create a collection named SSSIT.
+
+>use test  
+switched to db test
+
+>db.createCollection("myNewCollection")  
+{ "ok" : 1 }
+
+To check the created collection, use the command "show collections".
+
+>show collections  
+myNewCollection
+
+
+How does MongoDB create collection automatically
+MongoDB creates collections automatically when you insert some documents. For example: Insert a document named seomount into a collection named SSSIT. The operation will create the collection if the collection does not currently exist.
+
+>db.myNewCollection.insert({"name" : "seomount"})    
+>show collections    
+myNewCollection  
+
+
+If you want to see the inserted document, use the find() command.
+
+Syntax:
+
+db.collection_name.find()
+
+
+
+MongoDB Drop collection
+
+In MongoDB, db.collection.drop() method is used to drop a collection from a database. It completely removes a collection from the database and does not leave any indexes associated with the dropped collections.
+
+The db.collection.drop() method does not take any argument and produce an error when it is called with an argument. This method removes all the indexes associated with the dropped collection.
+
+Syntax:
+
+db.COLLECTION_NAME.drop()  
+
+MongoDB Drop collection example
+
+Let's take an example to drop collection in MongoDB.
+
+First check the already existing collections in your database.
+
+>use mydb  
+Switched to db mydb 
+
+> show collections  
+SSSIT
+system.indexes
+
+Note: Here we have a collection named SSSIT in our database.
+
+Now drop the collection with the name SSSIT:
+
+>db.SSSIT.drop()  
+True
+
+Now check the collections in the database:
+
+>show collections  
+System.indexes
+
+Now, there are no existing collections in your database.
+
+Note: The drop command returns true if it successfully drops a collection. It returns false when there is no existing collection to drop.
+
+
+
+
+
+
+MongoDB insert documents
+In MongoDB, the db.collection.insert() method is used to add or insert new documents into a collection in your database.
+
+Upsert
+
+There are also two methods "db.collection.update()" method and "db.collection.save()" method used for the same purpose. These methods add new documents through an operation called upsert.
+
+Upsert is an operation that performs either an update of existing document or an insert of new document if the document to modify does not exist.
+
+Syntax
+
+>db.COLLECTION_NAME.insert(document)  
+
+Let's take an example to demonstrate how to insert a document into a collection. In this example we insert a document into a collection named demoCollection. This operation will automatically create a collection if the collection does not currently exist.
+
+Example
+
+db.myCollection.insert({
+ data: [
+   {
+     id: 1001,
+     name: "Samsung SCREEN 3",
+     description: "5.5 Screen for Moto g",
+     inStock: 10,
+     colorName: "Blue",
+     isOnline: false,
+     country: "India",
+     price: 12000,
+     prodImg: "../../../assets/img/mob2.png",
+     clsVar: true,
+     qntt: 0,
+   },
+   {
+     id: 1002,
+     name: "screen 5",
+     description: "5 Screen for Samsung",
+     inStock: 8,
+     colorName: "red",
+     isOnline: true,
+     country: "Germany",
+     price: 12000,
+     prodImg: "../../../assets/img/mob2.png",
+     clsVar: true,
+     qntt: 0,
+   },
+   {
+     id: 1003,
+     name: "Key Panel",
+     description: "Key panel for Nokia",
+     inStock: 12000,
+     colorName: "green",
+     isOnline: false,
+     country: "",
+     price: 12000,
+     prodImg: "../../../assets/img/mob2.png",
+     clsVar: true,
+     qntt: 0,
+   },
+ ],
+});
+ 
+
+
+
+After the successful insertion of the document, the operation will return a WriteResult object with its status.
+
+Output:
+
+WriteResult({ "nInserted" : 1 })
+
+Here the nInserted field specifies the number of documents inserted. If an error is occurred then the WriteResult will specify the error information.
+
+Check the inserted documents
+If the insertion is successful, you can view the inserted document by the following query.
+
+>db.demoCollection.find()  
+
+You will get the inserted document in return.
+
+Output:
+
+{ "_id" : ObjectId("56482d3e27e53d2dbc93cef8"), "course" : "java", "details" : 
+{ "duration" : "6 months", "Trainer" : "Sonoo jaiswal" }, "Batch" : 
+[ {"size" : "Small", "qty" : 15 }, { "size" : "Medium", "qty" : 25 } ],
+ "category" : "Programming language" }
+
+
+Note: Here, the ObjectId value is generated by MongoDB itself. It may differ from the one shown.
+
+MongoDB insert multiple documents
+If you want to insert multiple documents in a collection, you have to pass an array of documents to the db.collection.insert() method.
+
+Create an array of documents
+Define a variable named Allcourses that hold an array of documents to insert.
