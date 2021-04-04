@@ -24,6 +24,23 @@ app.use(bodyparser.json());
 // routes
 app.use("/api", routes);
 
+//connect mongodb also creates new db ‘productlist’ with default port ‘:27017’
+
+// use productlist
+
+mongoose.connect("mongodb://localhost:27017/productlist");
+
+//on connection
+mongoose.connection.on("connected", () => {
+  console.log("Connected to database mongodb @ 27017");
+});
+
+mongoose.connection.on("error", (err) => {
+  if (err) {
+    console.log("Error in Database Connection : " + err);
+  }
+});
+
 // Interacting with front-end
 app.get("/", (req, res) => {
   res.send("<h1>Response from 'server'...!</h1>");
